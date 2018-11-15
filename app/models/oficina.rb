@@ -1,0 +1,2 @@
+class Oficina < ApplicationRecord
+end

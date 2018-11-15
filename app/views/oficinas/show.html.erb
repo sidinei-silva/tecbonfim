@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @oficina.titulo %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @oficina.descricao %>
+</p>
+
+<p>
+  <strong>Professor:</strong>
+  <%= @oficina.professor %>
+</p>
+
+<p>
+  <strong>Inicio:</strong>
+  <%= @oficina.inicio %>
+</p>
+
+<p>
+  <strong>Termino:</strong>
+  <%= @oficina.termino %>
+</p>
+
+<%= link_to 'Edit', edit_oficina_path(@oficina) %> |
+<%= link_to 'Back', oficinas_path %>
