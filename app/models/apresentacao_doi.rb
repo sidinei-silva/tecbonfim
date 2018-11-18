@@ -1,0 +1,2 @@
+class ApresentacaoDoi < ApplicationRecord
+end

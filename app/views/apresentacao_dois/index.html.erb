@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Apresentacao Dois</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Descricao</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apresentacao_dois.each do |apresentacao_doi| %>
+      <tr>
+        <td><%= apresentacao_doi.descricao %></td>
+        <td><%= link_to 'Show', apresentacao_doi %></td>
+        <td><%= link_to 'Edit', edit_apresentacao_doi_path(apresentacao_doi) %></td>
+        <td><%= link_to 'Destroy', apresentacao_doi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Apresentacao Doi', new_apresentacao_doi_path %>

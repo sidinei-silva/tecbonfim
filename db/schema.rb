@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_15_101029) do
+ActiveRecord::Schema.define(version: 2018_11_18_015001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "apresentacao_dois", force: :cascade do |t|
+    t.text "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "apresentacao_ums", force: :cascade do |t|
+    t.text "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "atividades", force: :cascade do |t|
+    t.date "dia_atividade"
+    t.time "hora_atividade"
+    t.string "acontecimento"
+    t.string "tema"
+    t.string "envolvidos"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "oficinas", force: :cascade do |t|
     t.string "titulo"
@@ -21,6 +43,23 @@ ActiveRecord::Schema.define(version: 2018_11_15_101029) do
     t.string "professor"
     t.time "inicio"
     t.time "termino"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "palestras", force: :cascade do |t|
+    t.string "palestrante"
+    t.string "email_palestrante"
+    t.string "titulo_palestra"
+    t.text "desc_palestra"
+    t.date "dia_palestra"
+    t.time "hora_palestra"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sobres", force: :cascade do |t|
+    t.text "descricao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
