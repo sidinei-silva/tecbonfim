@@ -10,6 +10,15 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require others/font-awesome.min
+ *= require others/bootstrap
+ *= require others/magnific-popup
+ *= require others/nice-select
+ *= require others/animate.min
+ *= require others/owl.carousel
+ *= require main
+ *= require custom
  *= require_self
  */
+
+

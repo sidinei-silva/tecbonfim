@@ -13,4 +13,20 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+
+//= require others/jquery-2.2.4.min
+//= require others/popper.min
+//= require others/bootstrap.min
+//= require others/easing.min
+//= require others/hoverIntent
+//= require others/superfish.min
+//= require others/jquery.ajaxchimp.min
+//= require others/jquery.magnific-popup.min
+//= require others/owl.carousel.min
+//= require others/jquery.sticky
+//= require others/jquery.nice-select.min
+//= require others/parallax.min
+//= require main
+//= require others/modal_login
+
+

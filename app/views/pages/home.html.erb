@@ -1,2 +1,585 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+
+
+<header id="header">
+  <div class="container">
+    <div class="row align-items-center justify-content-between d-flex">
+      <div id="logo">
+        <a href="index.html"><%=image_tag("logo.png") %></a>
+      </div>
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#header">Home</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#speakers">Palestras</a></li>
+          <li><a href="#schedule">Programação</a></li>
+          <li><a href="#cursos">Oficinas</a></li>
+
+          <li><a href="#" data-toggle="modal" data-target="#login-modal">Entrar | Cadastrar</a></li>
+          <li class="d-none">Logado com: Sidinei Souza da Silva</li>
+          <li class="d-none"><a href="" class="btn btn-danger">Sair</a></li>
+        </ul>
+
+      </nav><!-- #nav-menu-container -->
+
+
+    </div>
+  </div>
+</header><!-- #header -->
+
+
+<!-- start banner Area -->
+<section class="banner-area relative" id="home" style="background: url(<%= image_url("bg.png") %>)">
+  <div class="overlay overlay-bg">
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+  </div>
+
+  <div class="container">
+    <div class="row fullscreen d-flex align-items-center justify-content-center">
+      <div class="banner-content col-lg-9 col-md-12">
+        <h6>Bem vindo ao</h6>
+        <h1 class="text-white">
+          Tec Bonfim 2018
+        </h1>
+        <div class="countdown">
+          <div id="timer" class="text-white"></div>
+        </div>
+        <h4><span><i class="far fa-calendar-alt lnr-icon"></i></span> 05 - 07 dezembro, 2018</h4>
+        <h4><span><i class="fas fa-map-marker-alt lnr-icon"></i></span> Instituto Federal de Educação, Ciências e Tecnologia Baiano - Senhor do
+          Bonfim</h4>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End banner Area -->
+
+<!-- Start home-video Area -->
+<section class="home-video-area">
+  <div class="container-fluid">
+    <div class="row justify-content-end align-items-center">
+      <div class="col-lg-4 no-padding about-right">
+        <p class="top-title">Prestigie Trabalhos</p>
+        <h1>Apresentações de relatórios de estágio, <br> Projetos integradores e Trabalhos acadêmicos.<br></h1>
+        <p><span>We are here to listen from you deliver exellence</span></p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+          magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore. magna aliqua. Ut enim ad minim.
+        </p>
+      </div>
+      <section class="video-area col-lg-6 no-padding">
+        <div class="overlay overlay-bg"></div>
+        <div class="containers">
+          <div class="video-content">
+            <%=image_tag("about1.jpg", class: "img-fluid")%>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+<!-- End home-aboutus Area -->
+
+
+<!-- Start home-aboutus Area -->
+<section class="home-aboutus-area">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-lg-8 no-padding about-left">
+        <%= image_tag("about2.jpg", class: "img-fluid") %>
+      </div>
+      <div class="col-lg-4 no-padding about-right">
+        <p class="top-title">Enriqueça seus conhecimentos</p>
+        <h1 class="text-white">Oficinas e Palestras <br></h1>
+        <p><span>We are here to listen from you deliver exellence</span></p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+          magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore. magna aliqua. Ut enim ad minim.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End home-aboutus Area -->
+
+<!-- Start Generic Area -->
+<section class="about-generic-area section-gap" id="about">
+  <div class="container border-top-generic">
+    <h3 class="about-title mb-30">Sobre o evento</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="img-text">
+          <p class="text-justify">Recently, the US Federal government banned online casinos from operating in America by
+            making it illegal to
+            transfer money to them through any US bank or payment system. As a result of this law, most of the popular
+            online casino networks such as Party Gaming and PlayTech left the United States. Overnight, online casino
+            players found themselves being chased by the Federal government. But, after a fortnight, the online casino
+            industry came up with a solution and new online casinos started taking root. These began to operate under a
+            different business umbrella, and by doing that, rendered the transfer of money to and from them legal. A major
+            part of this was enlisting electronic banking systems that would accept this new clarification and start doing
+            business with me. Listed in this article are the electronic banking systems that accept players from the United
+            States that wish to play in online casinos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Generic Start -->
+
+<!-- Start spekers Area -->
+<section class="spekers-area pb-100" id="speakers">
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-70 col-lg-8">
+        <div class="title text-center">
+          <h1 class="mb-10">Palestras</h1>
+          <p>Acompanhe nossos palestrantes e suas respectivas palestras.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row no-padding">
+      <div class="active-speaker-carusel col-lg-12 no-padding">
+        <div class="single-speaker item">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-6 speaker-img no-padding">
+                <%= image_tag("test.jpg", class: "img-fluid", style: "max-height:570px;") %>
+              </div>
+              <div class="col-md-6 speaker-info no-padding">
+                <h6 class="text-uppercase">Sidinei Silva</h6>
+                <h1 class="text-white">Titulo da Palestra</h1>
+                <p>
+                  Computer users and programmers have become so accustomed to using Windows, even for the changing capabilities
+                  and the appearances.
+                </p>
+                <p><span><i class="far fa-envelope lnr-icon"></i></span>iamspeaker@gmail.com</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="single-speaker item">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-6 speaker-img no-padding">
+                <%= image_tag("s2.jpg", class: "img-fluid", style: "max-height:570px;") %>
+              </div>
+              <div class="col-md-6 speaker-info no-padding">
+                <h6 class="text-uppercase">speaker 02</h6>
+                <h1 class="text-white">Elizabeth Stokes</h1>
+                <p>
+                  Computer users and programmers have become so accustomed to using Windows, even for the changing capabilities
+                  and the appearances.
+                </p>
+                <p><span><i class="far fa-envelope lnr-icon"></i></span>iamspeaker@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End spekers Area -->
+
+
+<!-- Start schedule Area -->
+<section class="schedule-area pb-100" id="schedule">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-70 col-lg-8">
+        <div class="title text-center">
+          <h1 class="mb-10">Programação</h1>
+          <p>Acompanhe aqui a programação do nosso evento.</p>
+        </div>
+      </div>
+    </div>
+    <div class="programacao-dia mb-5">
+      <div class="tittle text-center">
+        <h2>Dia 05 - Dezembro</h2>
+      </div>
+      <div class="row mt-5">
+        <div class="table-wrap col-lg-12">
+          <table class="schdule-table table table-bordered">
+            <thead class="thead-light">
+            <tr>
+              <th class="head" scope="col">Hora</th>
+              <th class="head" scope="col">Acontecimento</th>
+              <th class="head" scope="col">Tema</th>
+              <th class="head" scope="col">Envolvidos</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>02:00</td>
+              <td>Abertura do Evento</td>
+              <td>Programação Basica</td>
+              <td>Todos</td>
+
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="programacao-dia mb-5">
+      <div class="tittle text-center">
+        <h2>Dia 06 - Dezembro</h2>
+      </div>
+      <div class="row mt-5">
+        <div class="table-wrap col-lg-12">
+          <table class="schdule-table table table-bordered">
+            <thead class="thead-light">
+            <tr>
+              <th class="head" scope="col">Hora</th>
+              <th class="head" scope="col">Acontecimento</th>
+              <th class="head" scope="col">Tema</th>
+              <th class="head" scope="col">Envolvidos</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>02:00</td>
+              <td>Abertura do Evento</td>
+              <td>Programação Basica</td>
+              <td>Todos</td>
+
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="programacao-dia mb-5">
+      <div class="tittle text-center">
+        <h2>Dia 07 - Dezembro</h2>
+      </div>
+      <div class="row mt-5">
+        <div class="table-wrap col-lg-12">
+          <table class="schdule-table table table-bordered">
+            <thead class="thead-light">
+            <tr>
+              <th class="head" scope="col">Hora</th>
+              <th class="head" scope="col">Acontecimento</th>
+              <th class="head" scope="col">Tema</th>
+              <th class="head" scope="col">Envolvidos</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>02:00</td>
+              <td>Abertura do Evento</td>
+              <td>Programação Basica</td>
+              <td>Todos</td>
+
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- End schedule Area -->
+
+<!-- Start price Area -->
+<section class="price-area section-gap" id="cursos">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-70 col-lg-8">
+        <div class="title text-center">
+          <h1 class="mb-10">Mini Cursos e Oficinas</h1>
+          <p>Participantes só poderá ser inscrito em apenas 1 mini curso.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- Start Single Curso-->
+      <div class="col-lg-3 col-md-6 single-price"
+           data-toggle="tooltip"
+           data-html="true"
+           title="<b>Descrição da Oficina:</b><br>
+				<p>Está oficina será ministrada para aqueles que pretendem enriquecer conhecimentos acerca do desenvolvimento de sites</p>">
+
+
+        <div class="top-part">
+          <h1 class="package-no">01</h1>
+          <h4>Titulo da Oficina</h4>
+        </div>
+        <div class="package-list">
+          <ul>
+            <li>Nome do professor</li>
+            <li>Às: 2:00</li>
+            <li>Duração de: 2 Horas</li>
+          </ul>
+        </div>
+        <div class="bottom-part">
+          <a class="price-btn text-uppercase" href="#">Matricular</a>
+        </div>
+      </div>
+      <!--/single curso -->
+    </div>
+  </div>
+</section>
+<!-- End price Area -->
+
+
+<!-- start footer Area -->
+<footer class="footer-area section-gap">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-md-6 col-sm-6">
+        <div class="single-footer-widget">
+          <h6>Tec Bonfim 2018</h6>
+          <p>
+            Prestigie trabalhos, enriqueça seus conhecimentos, participante de grandes palestras, coloque a mão na massa com
+            excelentes minicursos e oficinas.
+          </p>
+          <p class="footer-text">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-5  col-md-6 col-sm-6">
+        <div class="single-footer-widget">
+          <h6>Local</h6>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.6993069275923!2d-40.14913478470061!3d-10.445418417022294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x76d5853b7d6672d%3A0x59f8cd6f00ec8510!2sInstituto+Federal+de+Educa%C3%A7%C3%A3o%2C+Ci%C3%AAncia+e+Tecnologia%2C+Campus+Senhor+do+Bonfim!5e0!3m2!1spt-BR!2sbr!4v1542469576925"
+                  width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+        <div class="single-footer-widget">
+          <h6>Oferecimento</h6>
+          <%= image_tag("logo_if.png", class: "img-fluid") %>
+          <div class="mt-5">
+            <p>Desenvolvido por: <a href="https://www.instagram.com/siidy_silvaa/" target="_blank">Sidinei Souza da Silva</a></p>
+          </div>
+          <div class="footer-social d-flex align-items-center text-center ">
+            <a href="https://www.facebook.com/SidineiSilvaa" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/siidy_silvaa/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End footer Area -->
+
+<!--Modal Login-->
+<!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Begin # DIV Form -->
+      <div id="div-forms">
+
+        <!-- Begin # Login Form -->
+        <form id="login-form">
+          <div class="text-center mt-4">
+            <h3><b>Entrar</b></h3>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="email_login">Seu email</label>
+              <input id="email_login" name="email" class="form-control" type="email" placeholder="Digite aqui seu email" required>
+            </div>
+            <div class="form-group">
+              <label for="senha_login">Sua Senha</label>
+              <input id="senha_login" name="senha" class="form-control" type="password" placeholder="Digite aqui sua senha" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div>
+              <button type="submit" class="btn btn-success btn-block">Entrar</button>
+            </div>
+            <div>
+              <button id="login_register_btn" type="button" class="btn btn-link">Cadastrar</button>
+            </div>
+          </div>
+        </form>
+        <!-- End # Login Form -->
+
+
+        <!-- Begin | Register Form -->
+        <form id="register-form" style="display:none;">
+          <div class="text-center mt-4">
+            <h3><b>Cadastrar</b></h3>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="nome">Seu Nome</label>
+              <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite aqui seu nome" required>
+            </div>
+            <div class="form-group">
+              <label for="cpf">Seu CPF</label>
+              <input type="text" name="cpf" id="cpf" class="form-control" placeholder="000.000.000-00" required>
+            </div>
+            <div class="form-group">
+              <label for="email_cadastrar">Seu email</label>
+              <input id="email_cadastrar" name="email" class="form-control" type="email" placeholder="Digite aqui seu email" required>
+            </div>
+            <div class="form-group">
+              <label for="senha_cadastrar">Sua Senha</label>
+              <input id="senha_cadastrar" name="senha" class="form-control" type="password" placeholder="Digite aqui sua senha" required>
+            </div>
+            <div class="form-group">
+              <label for="senha_confirmacao">Confirmação Senha</label>
+              <input id="senha_confirmacao" name="senha_confirmacao" class="form-control" type="password" placeholder="Confirme aqui sua senha" required>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <div>
+              <button type="submit" class="btn btn-success btn-block">Register</button>
+            </div>
+            <div>
+              <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+            </div>
+          </div>
+        </form>
+        <!-- End | Register Form -->
+
+      </div>
+      <!-- End # DIV Form -->
+
+    </div>
+  </div>
+</div>
+<!-- END # MODAL LOGIN -->
+
+<!--Particle Js-->
+<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("particles-js",
+        {
+            "particles": {
+                "number": {
+                    "value": 90,
+                    "density": {
+                        "enable": true,
+                        "value_area": 1400
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": false,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    var count_particles, stats, update;
+    stats = new Stats; stats.setMode(0);
+    stats.domElement.style.position = 'absolute';
+    stats.domElement.style.left = '0px';
+    stats.domElement.style.top = '0px';
+    document.body.appendChild(stats.domElement);
+    count_particles = document.querySelector('.js-count-particles');
+    update = function () { stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+        count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    } requestAnimationFrame(update); }; requestAnimationFrame(update);
+</script>
