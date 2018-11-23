@@ -14,7 +14,6 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -81,8 +80,6 @@ test:
 #
 production:
   <<: *default
-  url: "postgres://hvhznebinlfzzz:5e9d0666b504cc2e7676fba73a17e21c52e23c4a11c8abd64e3ee7a68c80c29f@ec2-50-17-203-51.compute-1.amazonaws.com:5432/d184kaf2vfiuue"
-  database: d184kaf2vfiuue
-  username: hvhznebinlfzzz
-  password: 5e9d0666b504cc2e7676fba73a17e21c52e23c4a11c8abd64e3ee7a68c80c29f
-  #password: <%= ENV['TECBONFIM_DATABASE_PASSWORD'] %>
+  database: TecBonfim_production
+  username: TecBonfim
+  password: <%= ENV['TECBONFIM_DATABASE_PASSWORD'] %>
