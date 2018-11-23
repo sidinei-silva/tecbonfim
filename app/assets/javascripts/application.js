@@ -28,5 +28,6 @@
 //= require others/parallax.min
 //= require main
 //= require others/modal_login
-
+//= require others/particles.min
+//= require others/particle
 
