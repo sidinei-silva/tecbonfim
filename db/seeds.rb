@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-AdminUser.create!(email: 'admin@tecbonfim.com', password: 't3cb0nf1m4dm1n', password_confirmation: 't3cb0nf1m4dm1n')
+#AdminUser.create!(email: 'admin@tecbonfim.com', password: 't3cb0nf1m4dm1n', password_confirmation: 't3cb0nf1m4dm1n')
 ApresentacaoUm.create!(descricao: 'Texto de apresentação sobre relatórios e outros. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit')
 ApresentacaoDoi.create!(descricao: 'Texto de apresentação sobre relatórios e outros. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. magna aliqua. Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit,')
 Sobre.create!(descricao: 'Texto sobre
