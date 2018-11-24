@@ -24,6 +24,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_storage_validations (0.5.2)
+      rails (~> 5.2.0)
     activeadmin (1.4.0)
       arbre (>= 1.1.1)
       coffee-rails
@@ -227,6 +229,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_storage_validations
   activeadmin
   bootsnap (>= 1.1.0)
   byebug

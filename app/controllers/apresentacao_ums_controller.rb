@@ -4,7 +4,7 @@ class ApresentacaoUmsController < ApplicationController
   # GET /apresentacao_ums
   # GET /apresentacao_ums.json
   def index
-    @apresentacao_ums = ApresentacaoUm.all
+    @apresentacao_um = ApresentacaoUm.all
   end
 
   # GET /apresentacao_ums/1

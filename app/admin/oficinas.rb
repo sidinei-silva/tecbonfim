@@ -3,8 +3,8 @@ ActiveAdmin.register Oficina do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
  permit_params :titulo, :descricao, :professor, :inicio, :termino
- menu label: "Cadastro: Oficina e palestra"
-
+ menu label: "Cadastro: oficina"
+ config.filters = false
 #
 # or
 #

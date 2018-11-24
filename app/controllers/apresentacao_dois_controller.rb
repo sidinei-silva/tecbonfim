@@ -4,7 +4,7 @@ class ApresentacaoDoisController < ApplicationController
   # GET /apresentacao_dois
   # GET /apresentacao_dois.json
   def index
-    @apresentacao_dois = ApresentacaoDoi.all
+    @apresentacao_dois = ApresentacaoDoi.find(1)
   end
 
   # GET /apresentacao_dois/1

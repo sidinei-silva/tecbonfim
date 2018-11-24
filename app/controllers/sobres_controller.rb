@@ -4,7 +4,7 @@ class SobresController < ApplicationController
   # GET /sobres
   # GET /sobres.json
   def index
-    @sobres = Sobre.all
+    @sobre = Sobre.all
   end
 
   # GET /sobres/1
