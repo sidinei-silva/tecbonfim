@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 # Gemfile
 gem 'activeadmin'
+gem 'active_storage_validations'
