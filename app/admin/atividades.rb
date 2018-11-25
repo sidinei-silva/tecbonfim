@@ -4,7 +4,6 @@ ActiveAdmin.register Atividade do
 #
  permit_params :dia_atividade, :hora_atividade, :acontecimento, :tema, :envolvidos
  menu label: "Atividade: Cronograma"
- config.filters = false
 #
 # or
 #

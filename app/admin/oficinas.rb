@@ -4,7 +4,6 @@ ActiveAdmin.register Oficina do
 #
  permit_params :titulo, :descricao, :professor, :inicio, :termino
  menu label: "Cadastro: oficina"
- config.filters = false
 #
 # or
 #

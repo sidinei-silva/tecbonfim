@@ -3,7 +3,6 @@ ActiveAdmin.register User do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   actions  :index, :show
   menu label: "Alunos"
-  config.filters = false
 # permit_params :list, :of, :attributes, :on, :model
 #
 # or

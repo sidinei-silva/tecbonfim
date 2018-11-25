@@ -5,7 +5,6 @@ ActiveAdmin.register Palestra do
 permit_params :palestrante, :email_palestrante, :titulo_palestra, :desc_palestra, :dia_palestra, :hora_palestra, :image
 menu label: "Cadastro: palestrante"
 
-config.filters = false
 
   show do
     attributes_table do

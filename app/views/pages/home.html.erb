@@ -15,15 +15,20 @@
           <li><a href="#schedule">Programação</a></li>
           <li><a href="#cursos">Oficinas</a></li>
 
-          <li><a href="#" data-toggle="modal" data-target="#login-modal">Entrar | Cadastrar</a></li>
-          <li class="d-none">Logado com: Sidinei Souza da Silva</li>
-          <li class="d-none"><a href="" class="btn btn-danger">Sair</a></li>
+          <% if user_signed_in? %>
+            <% user = current_user.id %>
+            <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+            <li><a href=""> Logado com: <%= current_user.nome %></a></li>
+          <% else %>
+            <li><a href="#" data-toggle="modal" data-target="#login-modal">Entrar | Cadastrar</a></li>
+          <%end %>
         </ul>
 
       </nav><!-- #nav-menu-container -->
 
     </div>
   </div>
+
 </header><!-- #header -->
 
 
@@ -289,6 +294,7 @@
         <div class="title text-center">
           <h1 class="mb-10">Mini Cursos e Oficinas</h1>
           <p>Participantes só poderá ser inscrito em apenas 1 mini curso.</p>
+          <h4 class="notice"><%= notice %></h4>
         </div>
       </div>
     </div>
@@ -315,14 +321,33 @@
             </ul>
           </div>
           <div class="bottom-part">
-            <a class="price-btn text-uppercase" href="#">Matricular</a>
+            <% if user_signed_in? %>
+
+              <%= form_with(model: current_user, local: true) do |form| %>
+                <%= form.hidden_field :oficina_id, value: oficina.id  %>
+                <div class="actions">
+                  <% if current_user.oficina_id == oficina.id %>
+                    <%= form.submit "Matriculado", class: "price-btn text-uppercase", disabled: true %>
+                  <% else %>
+                    <%= form.submit "Matricular", class: "price-btn text-uppercase" %>
+                  <% end %>
+
+                </div>
+              <% end %>
+
+            <% else %>
+              <a class="price-btn text-uppercase" href="#" data-toggle="modal" data-target="#login-modal">Entrar</a>
+              <p>Necessario entrar em seu cadastro para matricular-se</p>
+            <%end %>
           </div>
         </div>
         <!--/single curso -->
       <% end %>
 
     </div>
+
   </div>
+
 </section>
 <!-- End price Area -->
 
@@ -379,70 +404,88 @@
       <!-- Begin # DIV Form -->
       <div id="div-forms">
 
-        <!-- Begin # Login Form -->
-        <form id="login-form">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:id => "login-form"}) do |f| %>
+
           <div class="text-center mt-4">
             <h3><b>Entrar</b></h3>
           </div>
           <div class="modal-body">
-            <div class="form-group">
-              <label for="email_login">Seu email</label>
-              <input id="email_login" name="email" class="form-control" type="email" placeholder="Digite aqui seu email" required>
+            <div class="field form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
             </div>
-            <div class="form-group">
-              <label for="senha_login">Sua Senha</label>
-              <input id="senha_login" name="senha" class="form-control" type="password" placeholder="Digite aqui sua senha" required>
+
+            <div class="field form-group">
+              <%= f.label :Senha %><br />
+              <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
             </div>
+
+            <% if devise_mapping.rememberable? -%>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end -%>
           </div>
           <div class="modal-footer">
-            <div>
-              <button type="submit" class="btn btn-success btn-block">Entrar</button>
-            </div>
+            <div class="actions">
+            <%= f.submit "Entrar", class: "btn btn-success btn-block" %>
+          </div>
             <div>
               <button id="login_register_btn" type="button" class="btn btn-link">Cadastrar</button>
             </div>
           </div>
-        </form>
-        <!-- End # Login Form -->
+        <% end %>
+
+
 
 
         <!-- Begin | Register Form -->
-        <form id="register-form" style="display:none;">
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:id => "register-form"}) do |f|  %>
+
           <div class="text-center mt-4">
             <h3><b>Cadastrar</b></h3>
           </div>
+
           <div class="modal-body">
-            <div class="form-group">
-              <label for="nome">Seu Nome</label>
-              <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite aqui seu nome" required>
-            </div>
-            <div class="form-group">
-              <label for="cpf">Seu CPF</label>
-              <input type="text" name="cpf" id="cpf" class="form-control" placeholder="000.000.000-00" required>
-            </div>
-            <div class="form-group">
-              <label for="email_cadastrar">Seu email</label>
-              <input id="email_cadastrar" name="email" class="form-control" type="email" placeholder="Digite aqui seu email" required>
-            </div>
-            <div class="form-group">
-              <label for="senha_cadastrar">Sua Senha</label>
-              <input id="senha_cadastrar" name="senha" class="form-control" type="password" placeholder="Digite aqui sua senha" required>
-            </div>
-            <div class="form-group">
-              <label for="senha_confirmacao">Confirmação Senha</label>
-              <input id="senha_confirmacao" name="senha_confirmacao" class="form-control" type="password" placeholder="Confirme aqui sua senha" required>
+            <div class="field form-group">
+              <%= f.label :nome %>
+              <%= f.text_field :nome, class: "form-control" %>
             </div>
 
+            <div class="field form-group">
+              <%= f.label :cpf %>
+              <%= f.text_field :cpf, class: "form-control" %>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :Senha %>
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :Confirmação_Senha %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+            </div>
           </div>
           <div class="modal-footer">
-            <div>
-              <button type="submit" class="btn btn-success btn-block">Register</button>
+            <div class="actions">
+              <%= f.submit "Cadastrar", class: "btn btn-success btn-block" %>
             </div>
             <div>
-              <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+              <button id="register_login_btn" type="button" class="btn btn-link">Entrar</button>
             </div>
           </div>
-        </form>
+        <% end %>
         <!-- End | Register Form -->
 
       </div>
