@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   belongs_to :oficina, optional: true
 
+  validates :nome, :email, :cpf, :instituicao, :campus, presence: true
+
 end

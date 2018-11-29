@@ -6,6 +6,7 @@ permit_params :descricao
 
   actions  :index, :edit, :show, :update
   menu label: "Texto: prestigie trabalhos"
+  config.filters = false
 
 #
 # or

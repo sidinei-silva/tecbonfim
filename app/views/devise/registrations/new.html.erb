@@ -13,10 +13,26 @@
     <%= f.text_field :cpf %>
   </div>
 
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :instituição %>
+    <%= f.text_field :instituicao%>
+    <small>Sua Escola ou Instituição de ensino</small>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label "Campus ou Cidade" %>
+    <%= f.text_field :campus%>
+    <small>Cidade ou Campus da instituição</small>
   </div>
 
   <div class="field">

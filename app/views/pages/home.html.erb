@@ -136,10 +136,10 @@
           <div class="single-speaker item">
             <div class="container">
               <div class="row align-items-center">
-                <div class="col-md-6 speaker-img no-padding">
-                  <%= image_tag(url_for(palestra.image), class: "img-fluid", style: "max-height:570px;") %>
-                </div>
-                <div class="col-md-6 speaker-info no-padding">
+<!--                <div class="col-md-6 speaker-img no-padding">-->
+                  <%#= image_tag(url_for(palestra.image), class: "img-fluid", style: "max-height:570px;") %>
+<!--                </div>-->
+                <div class="col-md-12 speaker-info no-padding">
                   <h1 class="text-white"><%= palestra.palestrante %></h1>
                   <h6 class="text-uppercase"><%= palestra.titulo_palestra %> </h6>
                   <p>
@@ -192,14 +192,6 @@
                 <td><%= atividade.acontecimento %></td>
                 <td><%= atividade.tema %></td>
                 <td><%= atividade.envolvidos %></td>
-              </tr>
-            <% end %>
-            <% @palestras_dia5.each do |palestra| %>
-              <tr>
-                <td><%= palestra.hora_palestra.strftime("%H:%M") %></td>
-                <td><%= palestra.titulo_palestra %></td>
-                <td>Palestra</td>
-                <td><%= palestra.palestrante %></td>
               </tr>
             <% end %>
             </tbody>
@@ -268,12 +260,12 @@
                 <td><%= atividade.envolvidos %></td>
               </tr>
             <% end %>
-            <% @palestras_dia7.each do |palestra| %>
+            <% @oficinas_dia7.each do |oficina| %>
               <tr>
-                <td><%= palestra.hora_palestra.strftime("%H:%M") %></td>
-                <td><%= palestra.titulo_palestra %></td>
-                <td>Palestra</td>
-                <td><%= palestra.palestrante %></td>
+                <td><%= oficina.inicio.strftime("%H:%M") %></td>
+                <td><%= oficina.titulo %></td>
+                <td>Oficina</td>
+                <td><%= oficina.professor %></td>
               </tr>
             <% end %>
             </tbody>
@@ -462,6 +454,18 @@
             <div class="field form-group">
               <%= f.label :email %><br />
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label :Instituição %>
+              <%= f.text_field :instituicao, class: "form-control" %>
+              <small>Sua Escola ou Instituição de ensino</small>
+            </div>
+
+            <div class="field form-group">
+              <%= f.label "Campus ou Cidade" %>
+              <%= f.text_field :campus, class: "form-control" %>
+              <small>Cidade ou Campus da instituição</small>
             </div>
 
             <div class="field form-group">

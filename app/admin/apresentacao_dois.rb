@@ -5,6 +5,7 @@ ActiveAdmin.register ApresentacaoDoi do
  permit_params :descricao
  actions  :index, :edit, :show, :update
  menu label: "Texto: oficinas e palestras"
+ config.filters = false
 #
 # or
 #

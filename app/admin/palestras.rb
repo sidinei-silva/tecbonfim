@@ -4,6 +4,7 @@ ActiveAdmin.register Palestra do
 #
 permit_params :palestrante, :email_palestrante, :titulo_palestra, :desc_palestra, :dia_palestra, :hora_palestra, :image
 menu label: "Cadastro: palestrante"
+config.filters = false
 
 
   show do
@@ -12,11 +13,10 @@ menu label: "Cadastro: palestrante"
       row :email_palestrante
       row :titulo_palestra
       row :desc_palestra
-      row :dia_palestra
       row :hora_palestra
-      row :image do |ad|
-        image_tag url_for(ad.image)
-      end
+      # row :image do |ad|
+      #   image_tag url_for(ad.image)
+      # end
     end
   end
 
@@ -26,9 +26,8 @@ menu label: "Cadastro: palestrante"
       f.input :email_palestrante, required: true, label: "Email do palestrante"
       f.input :titulo_palestra, required: true, label: "Titulo da palestra"
       f.input :desc_palestra, required: true, label: "Descrição da palestra"
-      f.input :dia_palestra, required: true, :start_year => 2018, :end_year => 2018, label: "Dia da palestra"
       f.input :hora_palestra, required: true, label: "Hora da palestra"
-      f.input :image, required: true, as: :file, label: "Imagem do palestrante"
+      #f.input :image, required: true, as: :file, label: "Imagem do palestrante"
     end
     f.actions
   end

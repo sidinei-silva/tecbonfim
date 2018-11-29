@@ -69,6 +69,6 @@ class PalestrasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def palestra_params
-      params.require(:palestra).permit(:palestrante, :email_palestrante, :titulo_palestra, :desc_palestra, :dia_palestra, :hora_palestra)
+      params.require(:palestra).permit(:palestrante, :email_palestrante, :titulo_palestra, :desc_palestra, :hora_palestra)
     end
 end

@@ -163,7 +163,7 @@ $(document).ready(function(){
     });
 
     $('.active-speaker-carusel').owlCarousel({
-        items:2,
+        items:3,
         loop:true,
         dots: true,  
         autoplay:true,
@@ -172,7 +172,7 @@ $(document).ready(function(){
             items:1
         },
         1280:{
-            items:2
+            items:3
         }
         }
     });

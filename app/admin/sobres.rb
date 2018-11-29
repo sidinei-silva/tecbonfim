@@ -5,6 +5,7 @@ ActiveAdmin.register Sobre do
  permit_params :descricao
  actions  :index, :edit, :show, :update
  menu label: "Texto: sobre"
+ config.filters = false
 #
 # or
 #
