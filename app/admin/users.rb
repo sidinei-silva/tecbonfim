@@ -18,9 +18,9 @@ ActiveAdmin.register User do
 
   end
 
-  #filter :oficina, label: 'Oficina', as: :select,
-   #      collection: proc { Oficina.all.map { |a| [a.titulo, a.id] } }
-  #filter :presenca_oficina
+  filter :oficina, label: 'Oficina', as: :select,
+         collection: proc { Oficina.all.map { |a| [a.titulo, a.id] } }
+  filter :presenca_oficina
 
 
 end
