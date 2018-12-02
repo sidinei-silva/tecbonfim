@@ -18,7 +18,7 @@
           <% if user_signed_in? %>
             <% user = current_user.id %>
             <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
-            <li><a href=""> Logado com: <%= current_user.nome %></a></li>
+            <li><a href=""> Bem vindo(a): <%= current_user.nome.gsub(/\s.+/, '') %></a></li>
           <% else %>
             <li><a href="#" data-toggle="modal" data-target="#login-modal">Entrar | Cadastrar</a></li>
           <%end %>
@@ -231,6 +231,12 @@
                 <td><%= palestra.palestrante %></td>
               </tr>
             <% end %>
+            <tr>
+              <td>16:30</td>
+              <td>Encerramento de Atividades - Segundo Dia</td>
+              <td>Encerramento de Atividades - Segundo Dia</td>
+              <td>Equipe Organizadora - Tec Bonfim 2018</td>
+            </tr>
             </tbody>
           </table>
         </div>
@@ -294,6 +300,13 @@
       <% number = 0 %>
       <% @oficinas.each do |oficina| %>
         <% number = number+1 %>
+        <% quantidade = @users.where(oficina_id: oficina.id).count %>
+        <%
+          vagas = @total_vagas - quantidade
+          if vagas<0
+            vagas = 0
+          end
+        %>
         <!-- Start Single Curso-->
         <div class="col-lg-3 col-md-6 single-price"
              data-toggle="tooltip"
@@ -310,6 +323,8 @@
               <li><%= oficina.professor %></li>
               <li>Às: <%= oficina.inicio.strftime("%H:%M") %></li>
               <li>Termino: <%= oficina.termino.strftime("%H:%M") %></li>
+              <li>Vagas: <h3><%= vagas %></h3> </li>
+
             </ul>
           </div>
           <div class="bottom-part">
@@ -318,11 +333,15 @@
               <%= form_with(model: current_user, local: true) do |form| %>
                 <%= form.hidden_field :oficina_id, value: oficina.id  %>
                 <div class="actions">
+
                   <% if current_user.oficina_id == oficina.id %>
                     <%= form.submit "Matriculado", class: "price-btn text-uppercase", disabled: true %>
+                  <% elsif quantidade >= @total_vagas %>
+                    <%= form.submit "Vagas Preenchidas", class: "price-btn text-uppercase", disabled: true %>
                   <% else %>
                     <%= form.submit "Matricular", class: "price-btn text-uppercase" %>
                   <% end %>
+
 
                 </div>
               <% end %>

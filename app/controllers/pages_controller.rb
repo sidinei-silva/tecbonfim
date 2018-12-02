@@ -11,6 +11,7 @@ class PagesController < ApplicationController
 
     @oficinas = Oficina.all
     @oficinas_dia7 = @oficinas.order("inicio")
+    @total_vagas = 20
 
     @atividades = Atividade.all
     @atividade_dia5 = @atividades.where(dia_atividade: "2018-12-05").order("hora_atividade")
@@ -18,6 +19,7 @@ class PagesController < ApplicationController
     @atividade_dia7 = @atividades.where(dia_atividade: "2018-12-07").order("hora_atividade")
 
     @user = User.new
+    @users = User.all
   end
 
 end
