@@ -22,14 +22,5 @@ ActiveAdmin.register User do
          collection: proc { Oficina.all.map { |a| [a.titulo, a.id] } }
   filter :presenca_oficina
 
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
 
 end
