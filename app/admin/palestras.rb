@@ -6,7 +6,6 @@ permit_params :palestrante, :email_palestrante, :titulo_palestra, :desc_palestra
 menu label: "Cadastro: palestrante"
 config.filters = false
 
-
   show do
     attributes_table do
       row :palestrante
